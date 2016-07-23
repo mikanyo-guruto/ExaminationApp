@@ -31,18 +31,13 @@ class ViewController: UIViewController {
     
     /// 計算実行ボタン押下時の処理
     @IBAction private func calcurate(_: UIButton) {
-        
-        // let result = Int(value1.text!)! + Int(value2.text!)!
         // 値1、値2、演算子を一度文字列として取得
         let val = NSExpression(format: String(UTF8String: value1.text!)!  + String(selectedOperator) + String(UTF8String: value2.text!)!)
-        
-        print(val)
         
         // 文字列を数式化
         let result = val.expressionValueWithObject(nil, context: nil) as! Int
         
         // TODO: 計算結果ラベルの値を書き換えるようにする
-        // print("result: \(result)")
         resultLabel.text = String(result)
     }
     
